@@ -8,17 +8,18 @@
 </head>
 
 <body>
-<div class="header-container">
-    <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
-    <header class="header-items"> Mixify Songs Generator </header>
-</div>
-
-<div class="main-container">
-    <div class="song-container">
-
+    <div class="header-container">
+        <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
+        <header class="header-items"> Mixify Songs Generator </header>
     </div>
-</div>
 
+    <div class="main-container">
+        <h1>Generated Playlist for <span id="selected-genre"></span></h1>
+        <div id="playlist-container" class="song-container">
+            </div>
+        <button onclick="window.location.href='index.html'">Go Back</button>
+    </div>
+
+    <script src="generation-script.js"></script>
 </body>
-
 </html>
