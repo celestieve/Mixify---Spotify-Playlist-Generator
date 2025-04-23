@@ -22,5 +22,3 @@
    node index.js
 
 The server will run at http://localhost:8888
-
-Visit http://localhost:8888/login to start the Spotify login process.

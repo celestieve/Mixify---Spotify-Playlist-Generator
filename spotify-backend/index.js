@@ -1,4 +1,3 @@
-// this is mostly code from Gemini right now, 
 const express = require('express');
 const dotenv = require('dotenv');
 const SpotifyWebApi = require('spotify-web-api-node');
@@ -13,15 +12,15 @@ console.log('CLIENT_ID:', process.env.CLIENT_ID ? '✔️ loaded' : '❌ missing
 console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET ? '✔️ loaded' : '❌ missing');
 console.log('-------------------');
 
-const app = express();
+const app = express(); // <--- This line is now correctly placed
 const port = process.env.PORT || 8888;
 
 app.use(cors());
 
-// Serve static files from the root directory (where index.html and CSS are)
-app.use(express.static(path.join(__dirname, '..'))); // Assuming spotify-backend is one level down
+// Serve static files from the root directory
+app.use(express.static(path.join(__dirname, '..')));
 
-// Root route for sanity check
+// Root route
 app.get('/', (req, res) => {
     res.send('✅ Mixify API is running');
 });
@@ -64,6 +63,37 @@ async function ensureToken(req, res, next) {
     next();
 }
 app.use(ensureToken);
+
+// Endpoint to search for tracks by genre (accepts 'genre' as a query parameter)
+app.get('/api/search/tracks', async (req, res) => {
+    const genre = req.query.genre; // Get the genre from the query parameters
+
+    if (!genre) {
+        return res.status(400).json({ error: 'Please provide a genre in the query parameters (e.g., /api/search/tracks?genre=pop)' });
+    }
+
+    try {
+        const searchQuery = `genre:${genre}`;
+        const data = await spotifyApi.search(searchQuery, ['track'], { limit: 10 }); // Search for 'track' type
+
+        console.log('--- Spotify API Response Data ---');
+        console.log(JSON.stringify(data, null, 2)); // Log the entire data object
+
+        const tracks = data.body.tracks.items.map(item => ({
+            id: item.id,
+            name: item.name,
+            artists: item.artists.map(artist => artist.name),
+            album: item.album.name,
+            albumArt: item.album.images.length > 0 ? item.album.images[0].url : null,
+            previewUrl: item.preview_url,
+        }));
+        res.json(tracks);
+        console.log(`✅ Sent 10 tracks for genre: ${genre} (using search endpoint)`);
+    } catch (error) {
+        console.error(`❌ Error searching for ${genre} tracks (using search endpoint):`, error);
+        res.status(500).json({ error: `Failed to retrieve ${genre} tracks from Spotify (using search endpoint)`, details: error.message });
+    }
+});
 
 // Start the server
 app.listen(port, () => {
