@@ -4,90 +4,32 @@
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Mixify </title>
-    <link rel="stylesheet" href="mainpage-style.css">
+    <link rel="stylesheet" href="style.css">
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
 
   <body>
+  <div id="app">
     <div class="header-container">
         <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
         <header class="header-items"> MIXIFY SONG GENERATOR </header>
     </div>
 
-    <div class="search-container">
-        <form>
-            <div class="search">
-                <button class="search-icon material-symbols-outlined" type="submit"> search </button>
-                <input class="search-input" type="search" placeholder="What type of music are you feeling?" name="search">
-            </div>
-        </form>
-    </div>
-    <div class="genre-selection-container">
-        <div class="genre-selection">
-        <h1 class="genres">Pop</h1>
-            <div class="sub-genres-container">
-            <button> Indie Pop </button>
-            <button> New Wave </button>
-            <button> Kpop </button>
-            <button> Pop-punk </button>
-            <button> Country Pop </button>
-            <button> Teen Pop </button>
-        </div>
-        </div>
+      <div class="genre-selection-container">
+          <div class="genre-selection" v-for="genre in genres" :key="genre.name">
+              <h1 class="genres">{{ genre.name }}</h1>
+              <div class="sub-genres-container">
+                  <button v-for="sub in genre.subgenres" :key="sub">{{ sub }}</button>
+              </div>
+          </div>
+      </div>
 
-        <div class="genre-selection">
-        <h1 class="genres">Rock</h1>
-            <div class="sub-genres-container">
-            <button> Alt Rock </button>
-            <button> Grunge </button>
-            <button> Blues Rock </button>
-            <button> Soft Rock </button>
-            <button> Metal </button>
-            <button> Classic Rock </button>
-        </div>
-        </div>
 
-        <div class="genre-selection">
-        <h1 class="genres">Jazz</h1>
-            <div class="sub-genres-container">
-            <button> Blues </button>
-            <button> Funk </button>
-            <button> Dixieland </button>
-            <button> Soul Jazz </button>
-            <button> Bossa Nova </button>
-            <button> Bebop </button>
-        </div>
-        </div>
-
-        <div class="genre-selection">
-        <h1 class="genres">Indie</h1>
-            <div class="sub-genres-container">
-            <button> Shoegaze </button>
-            <button> Slowcore </button>
-            <button> Indietronica </button>
-            <button> Chamber Pop </button>
-            <button> Emo </button>
-            <button> Chillwave </button>
-        </div>
-        </div>
-
-        <div class="genre-selection">
-            <h1 class="genres">Rap</h1>
-                <div class="sub-genres-container">
-                <button> Drill </button>
-                <button> Trap </button>
-                <button> Hyphy </button>
-                <button> Conscious Rap </button>
-                <button> Boom-Bap </button>
-                <button> Alt Rap </button>
-            </div>
-            </div>
-
-    </div>
-
-    <div class="buttons-main">
+      <div class="buttons-main">
         <button class="button-particle-click" onclick = "location.href='generation.html'"> Generate </button>
         <button class="button-particle-click"> Surprise Me! </button>
     </div>
+  </div>
 
     <script src="mainpage-script.js"></script>
     </body>

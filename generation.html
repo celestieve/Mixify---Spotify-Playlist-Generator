@@ -4,21 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Mixify </title>
-    <link rel="stylesheet" href="generation-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-<div class="header-container">
-    <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
-    <header class="header-items"> Mixify Songs Generator </header>
-</div>
+<div id="app">
+    <div class="header-container">
+        <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
+        <header class="header-items"> MIXIFY SONG GENERATOR </header>
+    </div>
 
-<div class="main-container">
-    <div class="song-container">
-
+    <div class="main-container">
+        <div class="song-container">
+            <!-- Vue will generate songs here -->
+            <div v-if="songs.length === 0">No songs generated yet!</div>
+            <div v-else>
+                <div v-for="song in songs" :key="song.id" class="song-card">
+                    <h3>{{ song.title }}</h3>
+                    <p>{{ song.artist }}</p>
+                    <p>{{song.albumName}}</p>
+                    <p>{{song.albumArt}}</p>
+                    <audio :src="song.previewUrl" controls></audio>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<!-- Vue logic -->
+<script src="generation-script.js"></script>
 </body>
 
 </html>

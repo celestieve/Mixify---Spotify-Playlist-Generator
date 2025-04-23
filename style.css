@@ -116,45 +116,6 @@ header {
         cursor: pointer;
     }
 }
- 
-.search-container {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-  }
-
-.search {
-    width: max-content;
-    display: flex;
-    align-items: center;
-    padding: 14px;
-    border-radius: 28px;
-    background-color: #faf7f0;
-}
-
-.search-input {
-    font-size: 19px;
-    font-weight: bold;
-    font-family: "Forum", serif;
-    color: #f89655;
-    margin-left: 14px;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    width: 300px;
-}
-
-.search-input::placeholder {
-    color: #f89655;
-}
-
-.search-icon {
-    color: #f89655;
-    background-color: transparent;
-    outline: none;
-    border: transparent;
-    cursor: pointer;
-}
 
 .button-particle-click {
     box-shadow: 0 5px 10px rgb(0, 0, 0, 0.1);
@@ -221,4 +182,13 @@ header {
         background-position: 0% 90%, 15% 90%, 40% 70%, 55% 110%, 70% 80%, 90% 70%, 100% 10%;
         background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
+}
+
+/*Generation Page*/
+.song-card {
+    background-color: #2e1a3f;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    color: #f3e9f1;
 }
