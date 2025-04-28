@@ -4,102 +4,32 @@
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Mixify </title>
-    <link rel="stylesheet" href="mainpage-style.css">
+    <link rel="stylesheet" href="style.css">
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
 
   <body>
+  <div id="app">
     <div class="header-container">
         <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
         <header class="header-items"> MIXIFY SONG GENERATOR </header>
     </div>
 
-    <div class="search-container">
-        <form>
-            <div class="search">
-                <button class="search-icon material-symbols-outlined" type="submit"> search </button>
-                <input class="search-input" type="search" placeholder="What type of music are you feeling?" name="search">
-            </div>
-        </form>
+      <div class="genre-selection-container">
+          <div class="genre-selection" v-for="genre in genres" :key="genre.name">
+              <h1 class="genres">{{ genre.name }}</h1>
+              <div class="sub-genres-container">
+                  <button v-for="sub in genre.subgenres" :key="sub">{{ sub }}</button>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="buttons-main">
+        <button class="button-particle-click" onclick = "location.href='generation.html'"> Generate </button>
+        <button class="button-particle-click"> Surprise Me! </button>
     </div>
-    <div class="genre-selection-container">
-        <div class="genre-selection">
-        <h1 class="genres">Pop</h1>
-            <div class="sub-genres-container">
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-        </div>
-        </div>
-
-        <div class="genre-selection">
-        <h1 class="genres">Rock</h1>
-            <div class="sub-genres-container">
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-        </div>
-        </div>
-
-        <div class="genre-selection">
-        <h1 class="genres">Jazz</h1>
-            <div class="sub-genres-container">
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-        </div>
-        </div>
-
-        <div class="genre-selection">
-        <h1 class="genres">RNB</h1>
-            <div class="sub-genres-container">
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-            <button> subgenre </button>
-        </div>
-        </div>
-
-    </div>
-
-    <div class="buttons-main">
-        <button onclick = "location.href='generation.html'" class="button-particle-click"> Generate </button>
-        <button> Surprise Me! </button>
-    </div>
+  </div>
 
     <script src="mainpage-script.js"></script>
     </body>
