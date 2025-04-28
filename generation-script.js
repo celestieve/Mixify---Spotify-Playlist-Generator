@@ -13,6 +13,11 @@ createApp({
       return;
     }
 
+    const selectedGenre = localStorage.getItem('selectedGenre');
+    if (genre) {
+      document.getElementById('selected-genre').innerText = `You selected: ${genre}`;
+    }
+
     try {
       console.log(`Fetching songs for genre: ${genre}`);
       const response = await fetch(`http://localhost:8888/api/search/tracks?genre=${genre}`);

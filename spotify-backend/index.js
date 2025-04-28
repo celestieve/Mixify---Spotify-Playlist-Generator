@@ -68,9 +68,8 @@ async function ensureToken(req, res, next) {
 }
 app.use(ensureToken);
 
-// Endpoint to search for tracks by genre (accepts 'genre' as a query parameter)
 app.get('/api/search/tracks', async (req, res) => {
-    const genre = req.query.genre; // Get the genre from the query parameters
+    const genre = req.query.genre;
 
     if (!genre) {
         return res.status(400).json({ error: 'Please provide a genre in the query parameters (e.g., /api/search/tracks?genre=pop)' });
@@ -78,10 +77,8 @@ app.get('/api/search/tracks', async (req, res) => {
 
     try {
         const searchQuery = `genre:${genre}`;
-        const data = await spotifyApi.search(searchQuery, ['track'], { limit: 10 }); // Search for 'track' type
-
-        console.log('--- Spotify API Response Data ---');
-        console.log(JSON.stringify(data, null, 2)); // Log the entire data object
+        const offset = Math.floor(Math.random() * 50); // Safe random offset between 0-50
+        const data = await spotifyApi.search(searchQuery, ['track'], { limit: 10, offset });
 
         const tracks = data.body.tracks.items.map(item => ({
             id: item.id,
@@ -91,11 +88,11 @@ app.get('/api/search/tracks', async (req, res) => {
             albumArt: item.album.images.length > 0 ? item.album.images[0].url : null,
             previewUrl: item.preview_url,
         }));
+
         res.json(tracks);
-        console.log(`✅ Sent 10 tracks for genre: ${genre} (using search endpoint)`);
     } catch (error) {
-        console.error(`❌ Error searching for ${genre} tracks (using search endpoint):`, error);
-        res.status(500).json({ error: `Failed to retrieve ${genre} tracks from Spotify (using search endpoint)`, details: error.message });
+        console.error(`Error searching for ${genre} tracks:`, error);
+        res.status(500).json({ error: `Failed to retrieve ${genre} tracks from Spotify`, details: error.message });
     }
 });
 
