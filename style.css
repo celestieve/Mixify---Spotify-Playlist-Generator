@@ -22,7 +22,7 @@ body {
 header {
     text-align: center;
     font-family: acier-bat-noir, sans-serif;
-    font-weight: lighter;
+    font-weight: 100;
     font-style: normal;
     font-size: 1.4em;
 }
@@ -83,6 +83,10 @@ header {
     button:active {
         transition: ease .1s;
         transform: scale(.96);
+    }
+    button:focus {
+        color: #d66903;
+        background-color: #e89a51;
     }
 }
 
