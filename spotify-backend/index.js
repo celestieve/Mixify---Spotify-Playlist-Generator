@@ -1,3 +1,7 @@
+// most of this structure was initially created using prompts with ChatGPT and Gemini 
+// Troubleshooting, debugging, curating, and lots of changes were made by me (Levi).
+// Lots of functions/concepts from the Spotify API were also used. 
+
 const express = require('express');
 const dotenv = require('dotenv');
 const SpotifyWebApi = require('spotify-web-api-node');
@@ -6,7 +10,7 @@ const path = require('path');
 
 dotenv.config();
 
-// Debug: load env
+// A simple debugging process to ensure the environment variables are loaded correctly.
 console.log('--- Spotify ENV ---');
 console.log('CLIENT_ID:', process.env.CLIENT_ID ? '✔️ loaded' : '❌ missing');
 console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET ? '✔️ loaded' : '❌ missing');
