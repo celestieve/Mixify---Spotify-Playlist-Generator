@@ -14,7 +14,7 @@
 
 body {
     background-color: #1e1e1e;
-    color: #ff0f7b;
+    color: #ff2a98;
     font-family: "june-expt-variable", sans-serif;
     font-variation-settings: "STYL" 100;
 }
@@ -110,8 +110,8 @@ header {
         font-family: "Forum", serif;
         font-style: italic;
         font-weight: 600;
-        background-color: #ff0f7b;
-        outline: 5px double #ff0f7b;
+        background-color: #ff2a98;
+        outline: 5px double #ff2a98;
         border: none;
         color: #fff9f6;
         font-size: 2em;
@@ -141,14 +141,14 @@ header {
 }
 .button-particle-click.animate::before {
     top: -70%;
-    background-image: radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, transparent 20%, #da367d 20%, transparent 30%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #da367d 15%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%);
+    background-image: radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #ff2a98 20%, transparent 30%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ff2a98 15%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%);
     background-size: 10% 10%, 20% 20%, 15% 20%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 18% 18%;
     background-position: 0% 90%, 5% 90%, 5% 90%, 10% 90%, 20% 90%, 20% 90%, 35% 90%, 50% 90%, 65% 90%;
     animation: topBubbles 0.6s ease-in-out infinite;
@@ -165,14 +165,14 @@ header {
 }
 .button-particle-click.animate::after {
     bottom: -70%;
-    background-image: radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #da367d 15%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #da367d 15%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%),
-    radial-gradient(circle, #da367d 20%, transparent 20%);
+    background-image: radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ff2a98 15%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ff2a98 15%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%),
+    radial-gradient(circle, #ff2a98 20%, transparent 20%);
     background-size: 10% 15%, 15% 20%, 13% 18%, 15% 20%, 10% 15%, 15% 20%, 13% 18%;
     background-position: 10% 0%, 30% 10%, 55% 0%, 70% 0%, 85% 0%, 70% 0%, 70% 0%;
     animation: bottomBubbles 0.6s ease-in-out infinite;
