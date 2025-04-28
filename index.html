@@ -6,6 +6,7 @@
     <title> Mixify </title>
     <link rel="stylesheet" href="style.css">
       <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <link rel="icon" type="image/x-icon" href="favicon.ico">  
   </head>
 
   <body>
@@ -19,14 +20,18 @@
           <div class="genre-selection" v-for="genre in genres" :key="genre.name">
               <h1 class="genres">{{ genre.name }}</h1>
               <div class="sub-genres-container">
-                  <button v-for="sub in genre.subgenres" :key="sub">{{ sub }}</button>
+                <button v-for="sub in genre.subgenres" :key="sub" @click="selectSubgenre(sub)">
+                  {{ sub }}
+                </button>
               </div>
           </div>
       </div>
 
 
       <div class="buttons-main">
-        <button class="button-particle-click" onclick = "location.href='generation.html'"> Generate </button>
+        <button class="button-particle-click" @click="goToGenerate">
+          Generate
+        </button>
         <button class="button-particle-click"> Surprise Me! </button>
     </div>
   </div>

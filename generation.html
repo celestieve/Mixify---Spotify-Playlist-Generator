@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Mixify </title>
+    <title>Mixify</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -12,7 +12,7 @@
 <div id="app">
     <div class="header-container">
         <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
-        <header class="header-items"> MIXIFY SONG GENERATOR </header>
+        <header class="header-items">MIXIFY SONG GENERATOR</header>
     </div>
 
     <div class="main-container">
@@ -21,19 +21,28 @@
             <div v-if="songs.length === 0">No songs generated yet!</div>
             <div v-else>
                 <div v-for="song in songs" :key="song.id" class="song-card">
+
+                    <div v-if="song.albumArt">
+                        <img :src="song.albumArt" alt="Album Art" style="width: 150px; height: 150px; object-fit: cover; margin-bottom: 10px;">
+                    </div>
+
                     <h3>{{ song.title }}</h3>
-                    <p>{{ song.artist }}</p>
-                    <p>{{song.albumName}}</p>
-                    <p>{{song.albumArt}}</p>
-                    <audio :src="song.previewUrl" controls></audio>
+                    <p><strong>Artist:</strong> {{ song.artist }}</p>
+                    <p><strong>Album:</strong> {{ song.albumName }}</p>
+
+                    <div v-if="song.previewUrl">
+                        <audio :src="song.previewUrl" controls></audio>
+                    </div>
+                    <div v-else>
+                        <p>No preview available</p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Vue logic -->
 <script src="generation-script.js"></script>
 </body>
-
 </html>
