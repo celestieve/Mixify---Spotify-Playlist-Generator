@@ -8,7 +8,7 @@ createApp({
         { name: 'Rock', subgenres: ['Alt Rock', 'Grunge', 'Blues Rock', 'Soft Rock', 'Metal', 'Classic Rock'] },
         { name: 'Jazz', subgenres: ['Blues', 'Funk', 'Dixieland', 'Soul Jazz', 'Bossa Nova', 'Bebop'] },
         { name: 'Indie', subgenres: ['Shoegaze', 'Slowcore', 'Indietronica', 'Chamber Pop', 'Emo', 'Chillwave'] },
-        { name: 'Rap', subgenres: ['Drill', 'Trap', 'Hyphy', 'Conscious Rap', 'Boom-Bap', 'Alt Rap'] }
+        { name: 'Rap', subgenres: ['Drill', 'Trap', 'Hyphy', 'Hip-Hop', 'Boom-Bap', 'Alt Rap'] }
       ],
     };
   },
