@@ -9,6 +9,12 @@
 </head>
 
 <body>
+<div id="background-blobs">
+    <section id="up"></section>
+    <section id="down"></section>
+    <section id="left"></section>
+    <section id="right"></section>
+</div>
 <div id="app">
     <div class="header-container">
         <a href="index.html"><img class="header-items mixify-logo" src="images/mixify_logo.png" alt="Mixify Logo"></a>
@@ -19,17 +25,17 @@
         <div class="song-container">
             <!-- Vue will generate songs here -->
             <div v-if="songs.length === 0">No songs generated yet!</div>
-            <div v-else>
+            <div v-else class="song-grid">
                 <div v-for="song in songs" :key="song.id" class="song-card">
 
                     <div v-if="song.albumArt">
                         <img :src="song.albumArt" alt="Album Art" style="width: 150px; height: 150px; object-fit: cover; margin-bottom: 10px;">
                     </div>
-
+                    <div class="song-info">
                     <h3>{{ song.title }}</h3>
                     <p><strong>Artist:</strong> {{ song.artist }}</p>
                     <p><strong>Album:</strong> {{ song.albumName }}</p>
-
+                    </div>
                 </div>
             </div>
         </div>
