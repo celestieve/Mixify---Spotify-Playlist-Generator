@@ -381,11 +381,12 @@ header {
     background-color: #e1f0ee;
     padding: 10px;
     border-radius: 15px;
-    margin: 10px 0;
+    margin: 10px;
     color: #7da49f;
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: min-content;
 }
 
 .song-container{
