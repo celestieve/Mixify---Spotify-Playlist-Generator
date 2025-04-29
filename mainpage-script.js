@@ -4,11 +4,11 @@ createApp({
   data() {
     return {
       genres: [
-        { name: 'Pop', subgenres: ['Indie Pop', 'New Wave', 'K-pop', 'Pop-punk', 'Country Pop', 'Teen Pop'] },
-        { name: 'Rock', subgenres: ['Alt Rock', 'Grunge', 'Blues Rock', 'Soft Rock', 'Metal', 'Classic Rock'] },
-        { name: 'Jazz', subgenres: ['Blues', 'Funk', 'Dixieland', 'Soul Jazz', 'Bossa Nova', 'Bebop'] },
-        { name: 'Indie', subgenres: ['Shoegaze', 'Slowcore', 'Indietronica', 'Chamber Pop', 'Emo', 'Chillwave'] },
-        { name: 'Rap', subgenres: ['Drill', 'Trap', 'Hyphy', 'Hip-Hop', 'Boom-Bap', 'Alt Rap'] }
+        { name: 'Pop', subgenres: ['Indie-Pop', 'New-Wave', 'K-pop', 'Pop-punk', 'Country-Pop', 'Teen-Pop'] },
+        { name: 'Rock', subgenres: ['Alt-Rock', 'Grunge', 'Blues-Rock', 'Soft-Rock', 'Metal', 'Classic-Rock'] },
+        { name: 'Jazz', subgenres: ['Blues', 'Funk', 'Dixieland', 'Soul-Jazz', 'Bossa-Nova', 'Bebop'] },
+        { name: 'Indie', subgenres: ['Shoegaze', 'Slowcore', 'Indietronica', 'Chamber-Pop', 'Emo', 'Chillwave'] },
+        { name: 'Rap', subgenres: ['Drill', 'Trap', 'Hyphy', 'Hip-Hop', 'Boom-Bap', 'Alt-Rap'] }
       ],
     };
   },
