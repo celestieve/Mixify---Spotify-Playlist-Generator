@@ -85,7 +85,7 @@ header {
         transform: scale(.96);
     }
     button:focus {
-        color: #d66903;
+        color: #bb5c03;
         background-color: #e89a51;
     }
 }
