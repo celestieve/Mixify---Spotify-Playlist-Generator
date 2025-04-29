@@ -196,8 +196,8 @@ header {
 }
 
 /* responsive design */
-  /* phone sizing */
-  @media (min-width: 320px) and (max-width: 480px) {
+/* phone sizing */
+@media (min-width: 320px) and (max-width: 480px) {
 
     .genres {
         font-size: 1.6em;
@@ -206,13 +206,13 @@ header {
     .sub-genres-container {
         gap: 10px;
         grid-template-columns: repeat(3, auto);
-    
+
         button {
             width: 95px;
             font-size: .8em;
             transition: ease .1s;
         }
-    
+
     }
 
     .genre-selection {
@@ -231,17 +231,17 @@ header {
 
     .buttons-main {
         gap: 20px;
-    
+
         button {
             font-size: 1.5em;
             padding: 5px 10px 8px 10px;
         }
     }
 
-  }
-  
-  /* tablet */
-  @media (min-width: 481px) and (max-width: 1024px) {
+}
+
+/* tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
     .genres {
         font-size: 2em;
     }
@@ -249,12 +249,12 @@ header {
     .sub-genres-container {
         gap: 20px;
         grid-template-columns: repeat(3, auto);
-    
+
         button {
             font-size: 1.2em;
             transition: ease .1s;
         }
-    
+
     }
 
     .genre-selection {
@@ -273,14 +273,14 @@ header {
 
     .buttons-main {
         gap: 25px;
-    
+
         button {
             font-size: 1.8em;
             padding: 5px 15px 8px 15px;
         }
     }
 
-  }
+}
 
 /*Generation Page*/
 .song-card {
@@ -290,4 +290,3 @@ header {
     margin: 10px 0;
     color: #f3e9f1;
 }
-

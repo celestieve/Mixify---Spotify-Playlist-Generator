@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"> 
+<head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Mixify </title>
     <link rel="stylesheet" href="style.css">
-      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-      <link rel="icon" type="image/x-icon" href="favicon.ico">  
-  </head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
 
-  <body>
-  <div id="app">
+<body>
+<div id="app">
     <div class="header-container">
-      <a href="index.html"><img class="header-items mixify-logo" src="images/mixify_logo.png" alt="Mixify Logo"></a>
+        <a href="index.html"><img class="header-items mixify-logo" src="images/mixify_logo.png" alt="Mixify Logo"></a>
         <header class="header-items"> MIXIFY SONG GENERATOR </header>
     </div>
 
-      <div class="genre-selection-container">
-          <div class="genre-selection" v-for="genre in genres" :key="genre.name">
-              <h1 class="genres">{{ genre.name }}</h1>
-              <div class="sub-genres-container">
+    <div class="genre-selection-container">
+        <div class="genre-selection" v-for="genre in genres" :key="genre.name">
+            <h1 class="genres">{{ genre.name }}</h1>
+            <div class="sub-genres-container">
                 <button v-for="sub in genre.subgenres" :key="sub" @click="selectSubgenre(sub)">
-                  {{ sub }}
+                    {{ sub }}
                 </button>
-              </div>
-          </div>
-      </div>
+            </div>
+        </div>
+    </div>
 
-<!-- The linking of these buttons with backend was from a chatGPT prompt asking how to pair the two together. -->
-      <div class="buttons-main">
+    <!-- The linking of these buttons with backend was from a chatGPT prompt asking how to pair the two together. -->
+    <div class="buttons-main">
         <button class="button-particle-click" @click="goToGenerate">
-          Generate
+            Generate
         </button>
         <button class="button-particle-click" @click="surpriseMe">
-          Surprise Me!
+            Surprise Me!
         </button>
     </div>
-  </div>
+</div>
 
-    <script src="mainpage-script.js"></script>
-    </body>
+<script src="mainpage-script.js"></script>
+</body>
 </html>
