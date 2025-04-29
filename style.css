@@ -67,7 +67,9 @@ header {
     margin-bottom: 50px;
 
     button {
-        font-family: "Forum", serif;
+        font-family: dunbar-tall, sans-serif;
+        font-weight: 500;
+        font-style: normal;
         border: none;
         color: #7da49f;
         padding: 10px;
@@ -85,8 +87,9 @@ header {
         transform: scale(.96);
     }
     button:focus {
-        color: #d66903;
+        color: #bb5c03;
         background-color: #e89a51;
+        outline: 5px double #e89a51;
     }
 }
 
@@ -97,7 +100,7 @@ header {
 
     button {
         width: 190px;
-        font-size: 1.7em;
+        font-size: 1.5em;
         cursor: pointer;
     }
 }
@@ -111,15 +114,15 @@ header {
     gap: 20px;
 
     button {
-        font-family: "Forum", serif;
+        font-family: dunbar-low, sans-serif;
+        font-weight: 500;
         font-style: italic;
-        font-weight: 600;
         background-color: #ff2a98;
         outline: 5px double #ff2a98;
         border: none;
         color: #fff9f6;
-        font-size: 2em;
-        padding: 10px 15px 10px 15px;
+        font-size: 2.3em;
+        padding: 5px 20px 8px 20px;
         border-radius: 10px;
         cursor: pointer;
     }
@@ -193,23 +196,23 @@ header {
 }
 
 /* responsive design */
-  /* phone sizing */
-  @media (min-width: 320px) and (max-width: 480px) {
+/* phone sizing */
+@media (min-width: 320px) and (max-width: 480px) {
 
     .genres {
-        font-size: 1.5em;
+        font-size: 1.6em;
     }
 
     .sub-genres-container {
         gap: 10px;
         grid-template-columns: repeat(3, auto);
-    
+
         button {
             width: 95px;
-            font-size: 1em;
+            font-size: .8em;
             transition: ease .1s;
         }
-    
+
     }
 
     .genre-selection {
@@ -218,28 +221,27 @@ header {
         }
         button:hover {
             transform: scale(1.05);
-            font-size: 1em;
+            font-size: .8em;
         }
         button:active {
             transform: scale(.96);
-            font-size: 1em;
+            font-size: .8em;
         }
     }
 
     .buttons-main {
-        gap: 15px;
-    
+        gap: 20px;
+
         button {
-            font-weight: 600;
             font-size: 1.5em;
-            padding: 10px 15px 10px 15px;
+            padding: 5px 10px 8px 10px;
         }
     }
 
-  }
-  
-  /* tablet */
-  @media (min-width: 481px) and (max-width: 1024px) {
+}
+
+/* tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
     .genres {
         font-size: 2em;
     }
@@ -247,12 +249,12 @@ header {
     .sub-genres-container {
         gap: 20px;
         grid-template-columns: repeat(3, auto);
-    
+
         button {
-            font-size: 1.5em;
+            font-size: 1.2em;
             transition: ease .1s;
         }
-    
+
     }
 
     .genre-selection {
@@ -261,25 +263,24 @@ header {
         }
         button:hover {
             transform: scale(1.06);
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
         button:active {
             transform: scale(.96);
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
     }
 
     .buttons-main {
         gap: 25px;
-    
+
         button {
-            font-weight: 600;
             font-size: 1.8em;
-            padding: 10px 15px 10px 15px;
+            padding: 5px 15px 8px 15px;
         }
     }
 
-  }
+}
 
 /*Generation Page*/
 .song-card {
@@ -289,4 +290,3 @@ header {
     margin: 10px 0;
     color: #f3e9f1;
 }
-

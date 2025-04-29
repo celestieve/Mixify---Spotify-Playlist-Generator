@@ -11,10 +11,10 @@
 <body>
 <div id="app">
     <div class="header-container">
-        <img class="header-items mixify-logo" src="images/Mixify_logo.png" alt="Mixify Logo">
+        <a href="index.html"><img class="header-items mixify-logo" src="images/mixify_logo.png" alt="Mixify Logo"></a>
         <header class="header-items">MIXIFY SONG GENERATOR</header>
     </div>
-<div id="selected-genre"></div>
+    <div id="selected-genre"></div>
     <div class="main-container">
         <div class="song-container">
             <!-- Vue will generate songs here -->
@@ -29,13 +29,6 @@
                     <h3>{{ song.title }}</h3>
                     <p><strong>Artist:</strong> {{ song.artist }}</p>
                     <p><strong>Album:</strong> {{ song.albumName }}</p>
-
-                    <div v-if="song.previewUrl">
-                        <audio :src="song.previewUrl" controls></audio>
-                    </div>
-                    <div v-else>
-                        <p>No preview available</p>
-                    </div>
 
                 </div>
             </div>
