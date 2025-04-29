@@ -152,8 +152,8 @@ header {
 .genre-selection {
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
-    justify-content: center;
+    width: min-content;
+    justify-content: left;
     align-content: center;
     gap: 20px;
     margin-bottom: 50px;
@@ -186,6 +186,7 @@ header {
 }
 
 .sub-genres-container {
+    justify-content: center;
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(6, auto);
