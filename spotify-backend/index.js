@@ -75,7 +75,7 @@ app.get('/api/search/tracks', async (req, res) => {
     try {
         const searchQuery = `genre:${genre}`;
         const offset = Math.floor(Math.random() * 50); // Safe random offset between 0-50
-        const data = await spotifyApi.search(searchQuery, ['track'], { limit: 10, offset });
+        const data = await spotifyApi.search(searchQuery, ['track'], { limit: 9, offset });
 
         const tracks = data.body.tracks.items.map(item => ({
             id: item.id,
