@@ -1,5 +1,5 @@
 // most of this structure was initially created with prompts using ChatGPT and Gemini 
-// Troubleshooting, debugging, curating, and lots of changes were made by me (Levi).
+// Troubleshooting, debugging, curating, and changes were made by me (Levi).
 // Functions/concepts from the Spotify API were also used. 
 
 const express = require('express');
@@ -42,7 +42,7 @@ spotifyApi.clientCredentialsGrant()
     });
 
 // Middleware: ensure a valid access token
-let tokenExpiration = 0;
+let tokenExpiration = 0; // this function was all from Gemini
 async function ensureToken(req, res, next) {
     console.log('ensureToken: currentToken?', !!spotifyApi.getAccessToken());
     const now = Date.now();
