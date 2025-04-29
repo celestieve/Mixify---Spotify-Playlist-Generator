@@ -1,6 +1,6 @@
-// most of this structure was initially created using prompts with ChatGPT and Gemini 
-// Troubleshooting, debugging, curating, and lots of changes were made by me (Levi).
-// Lots of functions/concepts from the Spotify API were also used. 
+// most of this structure was initially created with prompts using ChatGPT and Gemini 
+// Troubleshooting, debugging, curating, and changes were made by me (Levi).
+// Functions/concepts from the Spotify API were also used. 
 
 const express = require('express');
 const dotenv = require('dotenv');
@@ -16,15 +16,12 @@ console.log('CLIENT_ID:', process.env.CLIENT_ID ? '✔️ loaded' : '❌ missing
 console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET ? '✔️ loaded' : '❌ missing');
 console.log('-------------------');
 
-const app = express(); // <--- This line is now correctly placed
+const app = express(); 
 const port = process.env.PORT || 8888;
 
 app.use(cors());
-
-// Serve static files from the root directory
 app.use(express.static(path.join(__dirname, '..')));
 
-// Root route
 app.get('/', (req, res) => {
     res.send('✅ Mixify API is running');
 });
@@ -35,7 +32,7 @@ const spotifyApi = new SpotifyWebApi({
     clientSecret: process.env.CLIENT_SECRET,
 });
 
-// Quick auth check on startup
+
 spotifyApi.clientCredentialsGrant()
     .then(data => {
         console.log('✅ Spotify auth OK – token expires in', data.body.expires_in, 'seconds');
@@ -45,7 +42,7 @@ spotifyApi.clientCredentialsGrant()
     });
 
 // Middleware: ensure a valid access token
-let tokenExpiration = 0;
+let tokenExpiration = 0; // this function was all from Gemini
 async function ensureToken(req, res, next) {
     console.log('ensureToken: currentToken?', !!spotifyApi.getAccessToken());
     const now = Date.now();
