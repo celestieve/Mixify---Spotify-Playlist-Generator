@@ -25,7 +25,7 @@ createApp({
         location.href = 'generation.html';
       }
     },
-    surpriseMe() { 
+    surpriseMe() { // chatGPT was consulted for this function
       const allSubgenres = this.genres.flatMap(genre => genre.subgenres);
       const randomSubgenre = allSubgenres[Math.floor(Math.random() * allSubgenres.length)];
       console.log('Randomly selected subgenre:', randomSubgenre);
