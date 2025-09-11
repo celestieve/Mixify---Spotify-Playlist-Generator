@@ -1,5 +1,10 @@
 # Mixify
 
+## Pictures of the project
+![img_1.png](img_1.png)
+
+![img.png](img.png)
+
 ## How to run this project
 
 1. Make sure you have Node.js (v20+) installed.
